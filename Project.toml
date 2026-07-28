@@ -1,6 +1,6 @@
 name = "LagrangeFourSquares"
 uuid = "da6f7a7f-3cb1-427e-9676-f30883c0caa8"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Haroun Meghaichi"]
 
 [deps]
