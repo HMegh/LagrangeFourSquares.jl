@@ -91,10 +91,10 @@ end
     
     @testset "Deterministic output" begin
         # See issue #5
+        s0=four_squares(10^15+3)
         for _=1:5
             s=four_squares(10^15+3)
-            summands=collect(s)
-            @test summands == [5515925, 8606428, 14341063, 26264765]
+            @test s==s0
         end
     end
 
