@@ -4,8 +4,6 @@ using StaticArrays
 using Random: MersenneTwister
 using Primes
 
-# Fixed-seed RNG for reproducibility
-const RNG = MersenneTwister(42)
 
 export SumOfSquares, four_squares
 

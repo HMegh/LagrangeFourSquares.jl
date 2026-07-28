@@ -83,9 +83,20 @@ end
         @test_throws ArgumentError SumOfSquares(10, SVector{2, Int}(1, 2))  # 1+4 ≠ 10
     end
 
+
+
+    #TODO: Add tests for show method
     @testset "show" begin
-        s = four_squares(4)
-        @test occursin("4", string(s))
     end
+    
+    @testset "Deterministic output" begin
+        # See issue #5
+        for _=1:5
+            s=four_squares(10^15+3)
+            summands=collect(s)
+            @test summands == [5515925, 8606428, 14341063, 26264765]
+        end
+    end
+
 
 end

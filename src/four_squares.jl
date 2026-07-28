@@ -27,9 +27,13 @@ Return a representation of the non-negative integer `n` as a sum of `K`
 perfect squares, where `K ∈ {1,2,3,4}` is minimal.
 
 Uses the **Rabin-Shallit** probabilistic algorithm (expected O((log n)²) bit
-operations). The internal RNG is seeded at module load time for reproducibility.
+operations).
 """
 function four_squares(n::T) where {T<:Integer}
+
+    RNG=MersenneTwister(42)
+
+
     n >= zero(T) || throw(ArgumentError("n must be non-negative, got $n"))
 
     # ── Step 0: n = 0 ────────────────────────────────────────────────────────
