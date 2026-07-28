@@ -14,9 +14,9 @@ $$n= a^2 + b^2 + c^2 + d^2$$
 The function `lagrange_four_squares(n)` returns a representation of the natural number `n` as a sum of four squares. For example:
 
 ```julia-repl
-using LagrangeFourSquares
+julia> using LagrangeFourSquares
 
-four_squares(1001)
+julia> four_squares(1001)
 1001 = 28² + 10² + 9² + 6²
 ```
 
