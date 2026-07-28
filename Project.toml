@@ -1,9 +1,17 @@
 name = "LagrangeFourSquares"
 uuid = "da6f7a7f-3cb1-427e-9676-f30883c0caa8"
-authors = ["Haroun Meghaichi"]
 version = "1.0.0-DEV"
+authors = ["Haroun Meghaichi"]
+
+[deps]
+Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 
 [compat]
+Primes = "0.5.7"
+Random = "1.11.0"
+StaticArrays = "1.9.18"
 julia = "1.10.10"
 
 [extras]
