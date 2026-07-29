@@ -91,9 +91,10 @@ end
     
     @testset "Deterministic output" begin
         # See issue #5
-        s0=four_squares(10^15+3)
+        n=Int64(10)^15+3 #Enforce Int64 (For githbub CI)
+        s0=four_squares(n)
         for _=1:5
-            s=four_squares(10^15+3)
+            s=four_squares(n)
             @test s==s0
         end
     end
