@@ -1,7 +1,7 @@
 module LagrangeFourSquares
 
 using StaticArrays
-using Random: MersenneTwister
+import StableRNGs:StableRNG
 using Primes
 
 

@@ -31,7 +31,7 @@ operations).
 """
 function four_squares(n::T) where {T<:Integer}
 
-    RNG=MersenneTwister(42)
+    RNG=StableRNG(42)
 
 
     n >= zero(T) || throw(ArgumentError("n must be non-negative, got $n"))
