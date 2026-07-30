@@ -42,8 +42,8 @@ function four_squares(n::T) where {T<:Integer}
     # ── Step 1: strip powers of 4 ────────────────────────────────────────────
     # Write n = 4^a * m; solve for m, then scale result by 2^a.
     m, a = n, 0
-    while m % T(4) == zero(T)
-        m ÷= T(4)
+    while m % 4 == zero(T)
+        m ÷= 4
         a += 1
     end
     scale = T(2)^a  # multiply each summand by this at the end
@@ -57,7 +57,7 @@ function four_squares(n::T) where {T<:Integer}
     # ── Step 3: 2 squares ────────────────────────────────────────────────────
     # Iterate x from 1 upward; check if m - x² is a perfect square.
     sq_m = isqrt(m)
-    for x in T(1):sq_m
+    for x in 1:sq_m
         ok, y = isqrt_check(m - x * x)
         if ok
             return _make_sum(n, (scale * x, scale * y, zero(T), zero(T)))
@@ -79,7 +79,7 @@ function four_squares(n::T) where {T<:Integer}
         p <= zero(T) && continue
 
         # Check p is a usable prime
-        (p == T(2) || (Primes.isprime(p) && p % T(4) == T(1))) || continue
+        (p == 2 || (Primes.isprime(p) && p % 4 == 1)) || continue
 
         # Cornacchia: p = z² + w²
         z, w = cornacchia(p)
